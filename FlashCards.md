@@ -30,3 +30,21 @@
 ### Benefits:
 - Constant-time access
 - Reduced memory overhead
+
+## Encode & Decode Strings (Design Problem)
+### Technique: Length-Based Encoding
+
+- Encode each string as: [length] + delimiter + [string]
+- Length prefix removes ambiguity
+- Delimiter separates metadata from content
+- Core Insight
+- Never rely on content characters for separation
+- Always design encoding so decoding is deterministic
+- Length prefix guarantees correct reconstruction even if string contains digits or symbols
+- Decoding Strategy
+- Read digits to compute length
+- Skip delimiter
+- Read exactly length characters
+- Repeat until end
+
+## Top k freq element: bucket sort
